@@ -1,13 +1,20 @@
-import { Column } from './../../models/task';
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Column, TaskStatus } from '../../models/task';
+import { CardComponent } from '../card/card.component';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-column',
   standalone: true,
-  imports: [],
+  imports: [CardComponent, DatePipe],
   templateUrl: './column.component.html',
-  styleUrl: './column.component.scss',
 })
 export class ColumnComponent {
   column = input.required<Column>();
+  boardService = inject(BoardService);
+
+  deleteTask(taskId: string) {
+    this.boardService.deleteTask(taskId, this.column().id as TaskStatus);
+  }
 }

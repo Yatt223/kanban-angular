@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-4 min-h-[500px] w-80 shadow-lg border border-white">
-  
+
   <!-- Header colonne -->
   <div class="flex items-center justify-between mb-2">
     <h2 class="text-lg font-bold text-gray-800">
@@ -10,11 +10,19 @@
     </span>
   </div>
 
-  <!-- Zone des cards (vide pour l'instant) -->
+  <!-- Cards -->
   <div class="flex flex-col gap-2 flex-1">
     @for (task of column().tasks; track task.id) {
-      <div class="bg-white rounded-xl p-3 shadow-sm border border-gray-100 text-sm text-gray-700">
-        {{ task.title }}
+      <app-card
+        [task]="task"
+        (onDelete)="deleteTask($event)"
+      />
+    }
+
+    <!-- Empty state -->
+    @if (column().tasks.length === 0) {
+      <div class="flex-1 flex items-center justify-center border-2 border-dashed border-gray-200 rounded-xl">
+        <p class="text-sm text-gray-300">Aucune tâche</p>
       </div>
     }
   </div>
