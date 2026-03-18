@@ -11,4 +11,10 @@ import { ColumnComponent } from '../column/column.component';
 export class BoardComponent {
   boardService = inject(BoardService);
   columns = this.boardService.getColumns();
+
+  reset() {
+    if (confirm('Remettre le board à zéro ?')) {
+      this.boardService.resetBoard();
+    }
+  }
 }

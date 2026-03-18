@@ -1,11 +1,19 @@
 <div class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 p-8">
-  
+
   <!-- Header -->
-  <div class="mb-8 text-center">
+  <div class="mb-8 text-center relative">
     <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
       Kanban Board
     </h1>
     <p class="text-gray-500 mt-1">Angular 19 + Tailwind v4</p>
+
+    <!-- Reset button -->
+    <button
+      (click)="reset()"
+      class="absolute right-0 top-0 text-xs text-gray-400 hover:text-red-400 hover:bg-red-50 px-3 py-1.5 rounded-lg border border-gray-200 hover:border-red-200 transition-all"
+    >
+      🔄 Reset
+    </button>
   </div>
 
   <!-- Colonnes -->
