@@ -3,12 +3,13 @@ import { DatePipe } from '@angular/common';
 import { CdkDropList, CdkDrag, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Column, TaskStatus } from '../../models/task';
 import { CardComponent } from '../card/card.component';
+import { AddTaskComponent } from '../add-task/add-task.component';
 import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-column',
   standalone: true,
-  imports: [CardComponent, DatePipe, CdkDropList, CdkDrag],
+  imports: [CardComponent, DatePipe, CdkDropList, CdkDrag, AddTaskComponent],
   templateUrl: './column.component.html',
 })
 export class ColumnComponent {

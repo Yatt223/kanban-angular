@@ -24,7 +24,6 @@
           [task]="task"
           (onDelete)="deleteTask($event)"
         />
-        <!-- Preview fantôme pendant le drag -->
         <div *cdkDragPlaceholder class="bg-indigo-100 border-2 border-dashed border-indigo-300 rounded-xl h-16"></div>
       </div>
     }
@@ -36,5 +35,8 @@
       </div>
     }
   </div>
+
+  <!-- Ajout de tâche -->
+  <app-add-task [status]="column().id" />
 
 </div>
