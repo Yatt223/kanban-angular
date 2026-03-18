@@ -5,7 +5,6 @@ import { BoardComponent } from './components/board/board.component';
   selector: 'app-root',
   standalone: true,
   imports: [BoardComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {}
